@@ -47,6 +47,8 @@ print("Cleaning text... This may take a few minutes.")
 data["cleaned_text"] = data["content"].apply(clean_text)
 
 data = data[["cleaned_text", "label"]]
+data = data.dropna(subset=["cleaned_text"])
+data = data[data["cleaned_text"].str.strip() != ""]
 
 data.to_csv(OUTPUT_PATH, index=False)
 
