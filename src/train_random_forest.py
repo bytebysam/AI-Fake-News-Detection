@@ -44,7 +44,7 @@ print(classification_report(y_test, predictions))
 ConfusionMatrixDisplay.from_predictions(
     y_test,
     predictions,
-    display_labels=["Real News", "Fake News"],
+    display_labels=["Fake News", "Real News"],
 )
 
 plt.title("Random Forest Confusion Matrix")
